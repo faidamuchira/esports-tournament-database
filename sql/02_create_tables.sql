@@ -48,6 +48,7 @@ FOREIGN KEY (game_id) REFERENCES games(game_id) -- links to games table
 );
 
 -- Drop table (used during development to fix typoerrors that were affecting the other tables)
+-- Recreated the tournaments table 
 DROP TABLE IF EXISTS tournaments;
 
 -- ============================================
@@ -68,4 +69,21 @@ FOREIGN KEY (tournament_id) REFERENCES tournaments(tournament_id),
 FOREIGN KEY (player1_id) REFERENCES players(player_id),
 FOREIGN KEY (player2_id) REFERENCES players(player_id),
 FOREIGN KEY (winner_id) REFERENCES players(player_id)
+);
+
+-- ============================================
+-- Table: player_tournaments
+-- Links players to tournaments (many-to-many)
+-- ============================================
+
+CREATE TABLE player_tournament(
+id INT AUTO_INCREMENT PRIMARY KEY, -- unique record id
+player_id INT NOT NULL, -- references a player
+tournament_id INT NOT NULL,  -- references a tournament
+score INT DEFAULT 0, -- player's score in tournament
+position INT, -- final ranking position
+
+-- foreign key relationships
+FOREIGN KEY (player_id) REFERENCES players(player_id),
+FOREIGN KEY (tournament_id) REFERENCES tournaments(tournament_id)
 );
