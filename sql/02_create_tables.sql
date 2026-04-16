@@ -20,3 +20,13 @@ CREATE TABLE players(
      join_date DATE NOT NULL -- date player joined the system    
 );
 
+-- ============================================
+-- Table: games
+-- Stores all games available in the system
+-- ============================================
+
+CREATE TABLE games(
+game_id INT AUTO_INCREMENT PRIMARY KEY, -- unique id for each game
+game_name VARCHAR(50) NOT NULL UNIQUE, -- name of the game(e.g FIFA, COD)
+genre VARCHAR(50) NOT NULL -- type of the game (e.g Sports, shooter)
+);
