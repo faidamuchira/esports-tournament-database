@@ -46,3 +46,26 @@ start_date DATE NOT NULL, -- when the tournaments begin
 
 FOREIGN KEY (game_id) REFERENCES games(game_id) -- links to games table
 );
+
+-- Drop table (used during development to fix typoerrors that were affecting the other tables)
+DROP TABLE IF EXISTS tournaments;
+
+-- ============================================
+-- Table: matches
+-- Stores match results between players
+-- ============================================
+
+CREATE TABLE matches(
+match_id INT AUTO_INCREMENT PRIMARY KEY, -- unique id for each match
+tournament_id INT NOT NULL, -- links to tournaments
+player1_id INT NOT NULL, -- first player in the match
+player2_id INT NOT NULL, -- second player of the match
+winner_id INT, -- winner of the match(it can be null initially)
+match_date DATETIME NOT NULL, -- date and time of the match
+
+-- foreign key relationships
+FOREIGN KEY (tournament_id) REFERENCES tournaments(tournament_id),
+FOREIGN KEY (player1_id) REFERENCES players(player_id),
+FOREIGN KEY (player2_id) REFERENCES players(player_id),
+FOREIGN KEY (winner_id) REFERENCES players(player_id)
+);
