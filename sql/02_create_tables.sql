@@ -30,3 +30,19 @@ game_id INT AUTO_INCREMENT PRIMARY KEY, -- unique id for each game
 game_name VARCHAR(50) NOT NULL UNIQUE, -- name of the game(e.g FIFA, COD)
 genre VARCHAR(50) NOT NULL -- type of the game (e.g Sports, shooter)
 );
+
+-- ============================================
+-- Table: tournaments
+-- Stores tournament information and links to games
+-- ============================================
+
+CREATE TABLE tournaments(
+tounament_id INT AUTO_INCREMENT PRIMARY KEY, -- unique id for each tournament
+tournament_name VARCHAR(100) NOT NULL, -- name of the tournament
+game_id INT NOT NULL, -- links to the game being played
+prize_pool DECIMAL(10, 2) DEFAULT 0 -- prize money
+      CHECK(prize_pool >= 0), -- prize cannot be negative
+start_date DATE NOT NULL, -- when the tournaments begin
+
+FOREIGN KEY (game_id) REFERENCES games(game_id) -- links to games table
+);
