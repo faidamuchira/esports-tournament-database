@@ -37,7 +37,7 @@ genre VARCHAR(50) NOT NULL -- type of the game (e.g Sports, shooter)
 -- ============================================
 
 CREATE TABLE tournaments(
-tounament_id INT AUTO_INCREMENT PRIMARY KEY, -- unique id for each tournament
+tournament_id INT AUTO_INCREMENT PRIMARY KEY, -- unique id for each tournament
 tournament_name VARCHAR(100) NOT NULL, -- name of the tournament
 game_id INT NOT NULL, -- links to the game being played
 prize_pool DECIMAL(10, 2) DEFAULT 0 -- prize money
