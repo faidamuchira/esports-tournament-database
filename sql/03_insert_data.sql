@@ -40,8 +40,12 @@ INSERT INTO
 VALUES
     ('Summer Cup', 1, 5000.00, '2025-06-01'),
     ('Pro League', 2, 10000.00, '2025-07-01'),
-    ( 'Fighting Championship', 3,  8000.00,
-        '2025-08-01'),
+    (
+        'Fighting Championship',
+        3,
+        8000.00,
+        '2025-08-01'
+    ),
     ('MOBA Masters', 4, 12000.00, '2025-09-01'),
     ('Battle Royale Bash', 5, 15000.00, '2025-10-01'),
     ('NBA Showdown', 6, 7000.00, '2025-11-01'),
@@ -50,3 +54,25 @@ VALUES
 
 -- test tournaments table
 -- SELECT * FROM tournaments;
+-- Insert matches
+-- This table records who played who, in which tournament, and who won
+INSERT INTO
+    matches(
+        tournament_id,
+        player1_id,
+        player2_id,
+        winner_id,
+        match_date
+    )
+VALUES
+    (1, 1, 2, 1, '2025-06-01 10:00:00'),
+    (1, 3, 4, 3, '2025-06-01 11:00:00'),
+    (2, 5, 6, 6, '2025-07-01 12:00:00'),
+    (2, 7, 8, 7, '2025-07-01 13:00:00'),
+    (3, 1, 3, 3, '2025-08-01 14:00:00'),
+    (4, 2, 4, 4, '2025-09-01 15:00:00'),
+    (5, 5, 7, 7, '2025-10-01 16:00:00'),
+    (6, 6, 8, 6, '2025-11-01 17:00:00');
+
+-- test matches table
+-- SELECT * FROM matches;
