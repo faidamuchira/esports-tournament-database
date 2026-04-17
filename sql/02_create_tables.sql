@@ -44,7 +44,7 @@ CREATE TABLE tournaments(
 
 -- Drop table (used during development to fix typoerrors that were affecting the other tables)
 -- Recreated the tournaments table 
-DROP TABLE IF EXISTS tournaments;
+-- DROP TABLE IF EXISTS tournaments;
 
 -- ============================================
 -- Table: matches
