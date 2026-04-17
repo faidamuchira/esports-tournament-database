@@ -19,6 +19,7 @@ VALUES
 
 -- select to test whether the table is populated
 -- SELECT * FROM players;
+
 -- Insert games
 INSERT INTO
     games(game_name, genre)
@@ -34,6 +35,7 @@ VALUES
 
 -- select to test
 -- SELECT * FROM games;
+
 -- Insert tournaments
 INSERT INTO
     tournaments(tournament_name, game_id, prize_pool, start_date)
@@ -76,6 +78,7 @@ VALUES
 
 -- test matches table
 -- SELECT * FROM matches;
+
 -- Insert Player participation in tournaments
 -- This table shows a record of which players participated in which tournaments, and how well they performed
 INSERT INTO
