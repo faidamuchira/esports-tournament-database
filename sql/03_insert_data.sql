@@ -16,3 +16,21 @@ VALUES
     ('Morgan', 'morgan@email.com', 1150, '2025-01-18'),
     ('Jamie', 'jamie@email.com', 1400, '2025-01-20'),
     ('Casey', 'casey@email.com', 1050, '2025-01-22');
+
+-- select to test whether the table is populated
+-- SELECT * FROM players;
+-- Insert games
+INSERT INTO
+    games(game_name, genre)
+VALUES
+    ('FIFA', 'Sports'),
+    ('Call of Duty', 'Shooter'),
+    ('Street Fighter', 'Fighting'),
+    ('League of Legends', 'MOBA'),
+    ('Fortnite', 'Battle Royale'),
+    ('NBA 2K', 'Sports'),
+    ('Tekken', 'Fighting'),
+    ('Valorant', 'Shooter');
+
+-- select to test
+-- SELECT * FROM games;
