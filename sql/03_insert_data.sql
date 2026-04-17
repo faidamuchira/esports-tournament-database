@@ -34,3 +34,19 @@ VALUES
 
 -- select to test
 -- SELECT * FROM games;
+-- Insert tournaments
+INSERT INTO
+    tournaments(tournament_name, game_id, prize_pool, start_date)
+VALUES
+    ('Summer Cup', 1, 5000.00, '2025-06-01'),
+    ('Pro League', 2, 10000.00, '2025-07-01'),
+    ( 'Fighting Championship', 3,  8000.00,
+        '2025-08-01'),
+    ('MOBA Masters', 4, 12000.00, '2025-09-01'),
+    ('Battle Royale Bash', 5, 15000.00, '2025-10-01'),
+    ('NBA Showdown', 6, 7000.00, '2025-11-01'),
+    ('Tekken Tournament', 7, 6000.00, '2025-12-01'),
+    ('Valorant Cup', 8, 11000.00, '2026-01-01');
+
+-- test tournaments table
+-- SELECT * FROM tournaments;
