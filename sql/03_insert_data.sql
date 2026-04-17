@@ -76,3 +76,19 @@ VALUES
 
 -- test matches table
 -- SELECT * FROM matches;
+-- Insert Player participation in tournaments
+-- This table shows a record of which players participated in which tournaments, and how well they performed
+INSERT INTO
+    player_tournament(player_id, tournament_id, score, position)
+VALUES
+    (1, 1, 10, 1),
+    (2, 1, 6, 2),
+    (3, 1, 8, 3),
+    (4, 1, 5, 4),
+    (5, 2, 7, 3),
+    (6, 2, 9, 2),
+    (7, 2, 12, 1),
+    (8, 2, 4, 4);
+
+-- test the player participation in tournaments table
+-- SELECT * FROM player_tournament;
