@@ -56,3 +56,15 @@ GROUP BY
     p.user_name
 ORDER BY
     total_matches DESC;
+
+-- ============================================
+-- Calculate average ranking points for players above 1000 points
+SELECT
+    ROUND(AVG(rank_points), 2) AS average_rank
+FROM
+    players
+WHERE
+    rank_points > 1000;
+
+  -- ============================================
+    
