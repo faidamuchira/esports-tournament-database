@@ -66,5 +66,17 @@ FROM
 WHERE
     rank_points > 1000;
 
-  -- ============================================
-    
+-- ============================================
+-- Show how long each player has been active (in days) since joining
+-- Uses built-in functions NOW() and DATEDIFF()
+-- Results are sorted by most active players first
+SELECT
+    player_id,
+    user_name,
+    DATEDIFF(NOW(), join_date) AS days_active
+FROM
+    players
+ORDER BY
+    days_active DESC;
+
+-- ============================================
