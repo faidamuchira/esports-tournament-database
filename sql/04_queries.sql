@@ -41,3 +41,18 @@ ORDER BY
     m.match_date;
 
 -- ============================================
+-- Count how many matches each player played as player1
+-- This query joins the matches and players tables to display player names instead of IDs, 
+-- while counting how many matches each player has participated in.
+SELECT
+    p.player_id,
+    P.user_name,
+    COUNT(*) AS total_matches
+FROM
+    matches m
+    JOIN players p ON m.player1_id = p.player_id
+GROUP BY
+    p.player_id,
+    p.user_name
+ORDER BY
+    total_matches DESC;
