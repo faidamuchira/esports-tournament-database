@@ -80,3 +80,15 @@ ORDER BY
     days_active DESC;
 
 -- ============================================
+-- Show how many days remain until each tournament starts
+-- Uses NOW() and DATEDIFF() to calculate time remaining
+-- Results are ordered by the closest upcoming tournament
+SELECT
+    tournament_id,
+    tournament_name,
+    DATEDIFF(start_date, NOW()) AS days_until_start
+from
+    tournaments
+ORDER BY
+    days_until_start ASC;
+
