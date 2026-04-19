@@ -92,3 +92,35 @@ from
 ORDER BY
     days_until_start ASC;
 
+-- ============================================
+-- Show all players and the matches they have played (if any)
+-- Uses LEFT JOIN to include players who may not have any matches
+-- Results are sorted alphabetically by player name
+SELECT
+    p.player_id,
+    p.user_name,
+    m.match_id,
+    m.match_date
+FROM
+    players p
+    LEFT JOIN matches m ON p.player_id = m.player1_id
+ORDER BY
+    p.user_name;
+
+-- ============================================
+-- Delete a player only if they are not involved in any matches
+DELETE FROM
+    players
+WHERE
+    player_id = 5
+    AND player_id NOT IN (
+        SELECT
+            player1_id
+        FROM
+            matches
+        UNION
+        SELECT
+            player2_id
+        FROM
+            matches
+    );
