@@ -95,3 +95,7 @@ VALUES
 
 -- test the player participation in tournaments table
 -- SELECT * FROM player_tournament;
+
+-- Adjust tournament dates to future to avoid negative date calculations
+UPDATE tournaments
+SET start_date = DATE_ADD(NOW(), INTERVAL tournament_id MONTH);
