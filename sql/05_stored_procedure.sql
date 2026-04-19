@@ -2,10 +2,12 @@
 -- File: 05_stored_procedure.sql
 -- Description: Stored procedures for the system
 -- ============================================
-USE esports_db;
+USE eSports_db;
 
 -- Stored procedure to retrieve all matches for a specific player
-DELIMITER \ \ CREATE PROCEDURE GetPlayerMatches(IN input_player_id INT) BEGIN
+DELIMITER \\ 
+
+CREATE PROCEDURE GetPlayerMatches(IN input_player_id INT) BEGIN
 SELECT
     p1.user_name AS player1,
     p2.user_name AS player2,
@@ -20,7 +22,9 @@ WHERE
 ORDER BY
     m.match_date;
 
-END / / DELIMITER;
+END // 
+
+DELIMITER;
 
 -- Example usage of the stored procedure
 CALL GetPlayerMatches(1);

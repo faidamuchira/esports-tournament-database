@@ -2,7 +2,7 @@
 -- File: 03_insert_data.sql
 -- Description: Inserts mock data into all tables
 -- ============================================
-USE esports_db;
+USE eSports_db;
 
 -- Insert players
 INSERT INTO

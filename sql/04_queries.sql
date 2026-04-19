@@ -3,7 +3,7 @@
 -- Description: Queries for retrieving and analysing data
 -- ============================================
 -- use the esports database
-USE esports_db;
+USE eSports_db;
 
 -- ============================================
 -- Get players ordered by ranking points (highest first)
